@@ -11,7 +11,6 @@ namespace Hashify.Main.Views
         {
             InitializeComponent();
         }
-
     }
 }
 
