@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
@@ -31,16 +32,24 @@ namespace Hashify.Main.ViewModels
             switch (_algorithms)
             {
                 case HashingAlgorithms.MD5:
-                     HashedFile = Md5Toolbox.GetFileHashAsString(FileName, ByteArrayToHex);
+                    _stopwatch.Start();
+                    HashedFile = Md5Toolbox.GetFileHashAsString(FileName, ByteArrayToHex);
+                    _stopwatch.Stop();
                     break;
                 case HashingAlgorithms.SHA1:
+                    _stopwatch.Start();
                     HashedFile = Sha1Toolbox.GetFileHashAsString(FileName, ByteArrayToHex);
+                    _stopwatch.Stop();
                     break;
                 case HashingAlgorithms.SHA2:
+                    _stopwatch.Start();
                     HashedFile = Sha256ToolBox.GetFileHashAsString(FileName, ByteArrayToHex);
+                    _stopwatch.Stop();
                     break;
                 case HashingAlgorithms.SHA3:
+                    _stopwatch.Start();
                     HashedFile = Sha384ToolBox.GetFileHashAsString(FileName, ByteArrayToHex);
+                    _stopwatch.Stop();
                     break;
                 case HashingAlgorithms.NONE:
                     {
@@ -50,6 +59,9 @@ namespace Hashify.Main.ViewModels
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            TimeElapsed = _stopwatch.ElapsedMilliseconds + " ms";
+            _stopwatch.Reset();
         }
         private void ExecuteSelectFileCommand(object o)
         {
@@ -77,6 +89,16 @@ namespace Hashify.Main.ViewModels
             }
         }
 
+        public string TimeElapsed
+        {
+            get => _timeElapsed;
+            set
+            {
+                _timeElapsed = value;
+                PropertyIsChanged(nameof(TimeElapsed));
+            }
+        }
+
         private static string ByteArrayToHex(byte[] bytes)
         {
             var result = new StringBuilder(bytes.Length * 2);
@@ -99,6 +121,9 @@ namespace Hashify.Main.ViewModels
         private string _fileName = string.Empty;
         private string _hashedFile;
         private HashingAlgorithms _algorithms;
+        private readonly Stopwatch _stopwatch = new Stopwatch();
+        private string _timeElapsed;
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void PropertyIsChanged(string info)

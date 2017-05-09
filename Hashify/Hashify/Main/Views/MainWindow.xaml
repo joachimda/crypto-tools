@@ -14,27 +14,31 @@
             <TabItem Header="File hashing">
                 <Grid Background="#FFE5E5E5">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="60*"/>
-                        <RowDefinition Height="35*"/>
-                        <RowDefinition Height="35*"/>
-                        <RowDefinition Height="35*"/>
-                        <RowDefinition Height="100*"/>
-                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="58*"/>
+                        <RowDefinition Height="34*"/>
+                        <RowDefinition Height="34*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="57*"/>
+                        <RowDefinition Height="39*"/>
+                        <RowDefinition Height="38*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="70*"/>
-                        <ColumnDefinition Width="70*"/>
+                        <ColumnDefinition Width="22*"/>
+                        <ColumnDefinition Width="46*"/>
                         <ColumnDefinition Width="274*"/>
-                        <ColumnDefinition Width="100*"/>
+                        <ColumnDefinition Width="101*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="File" Command="{Binding SelectFileCommand}" Grid.Column="3" Margin="0,7.8,10.4,0" Height="19" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Grid.Row="1"/>
-                    <Button Content="Hashify!" Command="{Binding HashifyCommand}" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,10.4,13.8" Grid.Row="5" VerticalAlignment="Bottom" Width="75" Height="19"/>
-                    <TextBox x:Name="TxtBoxFile" Text="{Binding FileName}" Margin="10,6.8,10.4,0" TextWrapping="Wrap" IsReadOnly="True" Grid.Row="1" Height="23" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
-                    <TextBox x:Name="TxtBoxHash" Text="{Binding HashedFile}" HorizontalAlignment="Left" Margin="10,0,0,9.8" Grid.Row="5" TextWrapping="Wrap" IsReadOnly="True" Width="399" Height="27" VerticalAlignment="Bottom" Grid.ColumnSpan="3"/>
-                    <RadioButton Content="MD5" IsChecked="{Binding RadioButtons.Md5Button}" HorizontalAlignment="Left" Margin="10,11,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-                    <RadioButton Content="SHA1" IsChecked="{Binding RadioButtons.Sha1Button}" HorizontalAlignment="Left" Margin="10,10.2,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-                    <RadioButton Content="SHA2" IsChecked="{Binding RadioButtons.Sha2Button}" Grid.Column="1" HorizontalAlignment="Left" Margin="7.6,10.2,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-                    <RadioButton Content="SHA3" IsChecked="{Binding RadioButtons.Sha3Button}" Grid.Column="1" HorizontalAlignment="Left" Margin="7.6,12,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+                    <Button Content="File" Command="{Binding SelectFileCommand}" Grid.Column="4" Margin="0,7.4,10.4,0" Height="19" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Grid.Row="1"/>
+                    <Button Content="Hashify!" Command="{Binding HashifyCommand}" Grid.Column="4" HorizontalAlignment="Right" Margin="0,0,10.4,14" Grid.Row="6" VerticalAlignment="Bottom" Width="75" Height="19"/>
+                    <TextBox x:Name="TxtBoxFile" Text="{Binding FileName}" Margin="10,6.4,10.8,0" TextWrapping="Wrap" IsReadOnly="True" Grid.Row="1" Height="23" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+                    <TextBox x:Name="TxtBoxHash" Text="{Binding HashedFile}" HorizontalAlignment="Left" Margin="10,0,0,10" Grid.Row="6" TextWrapping="Wrap" IsReadOnly="True" Width="399" Height="27" VerticalAlignment="Bottom" Grid.ColumnSpan="4"/>
+                    <RadioButton Content="MD5" IsChecked="{Binding RadioButtons.Md5Button}" HorizontalAlignment="Left" Margin="10,10.8,0,0" Grid.Row="2" VerticalAlignment="Top" Height="14" Width="45"/>
+                    <RadioButton Content="SHA1" IsChecked="{Binding RadioButtons.Sha1Button}" HorizontalAlignment="Left" Margin="10,10.4,0,0" Grid.Row="3" VerticalAlignment="Top" Height="15" Width="48"/>
+                    <RadioButton Content="SHA2" IsChecked="{Binding RadioButtons.Sha2Button}" Grid.Column="1" HorizontalAlignment="Left" Margin="7.6,10.4,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="15" Width="48"/>
+                    <RadioButton Content="SHA3" IsChecked="{Binding RadioButtons.Sha3Button}" Grid.Column="1" HorizontalAlignment="Left" Margin="7.6,11.8,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="15" Width="48"/>
+                    <TextBlock Margin="10,0,0,0.4" Grid.Row="5" TextWrapping="Wrap" Text="Time elapsed:" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="78" Height="32" VerticalAlignment="Bottom"/>
+                    <TextBlock Grid.ColumnSpan="2" Grid.Column="2" HorizontalAlignment="Left" Margin="2.2,0,0,16.4" Grid.Row="5" TextWrapping="Wrap" Text="{Binding TimeElapsed}" Width="72" Height="16" VerticalAlignment="Bottom"/>
                 </Grid>
             </TabItem>
             <TabItem Header="CryptoTools">
