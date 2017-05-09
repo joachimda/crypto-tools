@@ -37,8 +37,10 @@ namespace Hashify.Main.ViewModels
                     HashedFile = Sha1Toolbox.GetFileHashAsString(FileName, ByteArrayToHex);
                     break;
                 case HashingAlgorithms.SHA2:
+                    HashedFile = Sha256ToolBox.GetFileHashAsString(FileName, ByteArrayToHex);
                     break;
                 case HashingAlgorithms.SHA3:
+                    HashedFile = Sha384ToolBox.GetFileHashAsString(FileName, ByteArrayToHex);
                     break;
                 case HashingAlgorithms.NONE:
                     {
@@ -75,7 +77,7 @@ namespace Hashify.Main.ViewModels
             }
         }
 
-        private string ByteArrayToHex(byte[] bytes)
+        private static string ByteArrayToHex(byte[] bytes)
         {
             var result = new StringBuilder(bytes.Length * 2);
 

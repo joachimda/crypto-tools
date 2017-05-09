@@ -3,8 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Hashify"
-        xmlns:viewModels="clr-namespace:Hashify.Main.ViewModels" x:Class="Hashify.Main.Views.MainWindow"
+    xmlns:viewModels="clr-namespace:Hashify.Main.ViewModels" x:Class="Hashify.Main.Views.MainWindow"
         mc:Ignorable="d"
         Title="Hashify!" Height="350" Width="525" ResizeMode="NoResize">
     <Window.DataContext>
@@ -35,7 +34,7 @@
                     <RadioButton Content="MD5" IsChecked="{Binding RadioButtons.Md5Button}" HorizontalAlignment="Left" Margin="10,11,0,0" Grid.Row="2" VerticalAlignment="Top"/>
                     <RadioButton Content="SHA1" IsChecked="{Binding RadioButtons.Sha1Button}" HorizontalAlignment="Left" Margin="10,10.2,0,0" Grid.Row="3" VerticalAlignment="Top"/>
                     <RadioButton Content="SHA2" IsChecked="{Binding RadioButtons.Sha2Button}" Grid.Column="1" HorizontalAlignment="Left" Margin="7.6,10.2,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-                    <RadioButton Content="WAT1" Grid.Column="1" HorizontalAlignment="Left" Margin="7.6,12,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+                    <RadioButton Content="SHA3" IsChecked="{Binding RadioButtons.Sha3Button}" Grid.Column="1" HorizontalAlignment="Left" Margin="7.6,12,0,0" Grid.Row="2" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
             <TabItem Header="CryptoTools">

@@ -9,11 +9,13 @@ namespace Hashify.Main
             Md5Button = false;
             Sha1Button = false;
             Sha2Button = false;
+            Sha3Button = false;
         }
 
         private bool _md5Button;
         private bool _sha1Button;
-        private bool _sha2Button1;
+        private bool _sha2Button;
+        private bool _sha3Button;
 
         public bool Md5Button
         {
@@ -37,11 +39,21 @@ namespace Hashify.Main
 
         public bool Sha2Button
         {
-            get => _sha2Button1;
+            get => _sha2Button;
             set
             {
-                _sha2Button1 = value;
+                _sha2Button = value;
                 PropertyIsChanged(nameof(Sha2Button));
+            }
+        }
+
+        public bool Sha3Button
+        {
+            get => _sha3Button;
+            set
+            {
+                _sha3Button = value;
+                PropertyIsChanged(nameof(Sha3Button));
             }
         }
 
@@ -55,6 +67,14 @@ namespace Hashify.Main
             if (Sha1Button)
             {
                 return HashingAlgorithms.SHA1;
+            }
+            if (Sha2Button)
+            {
+                return HashingAlgorithms.SHA2;
+            }
+            if (Sha3Button)
+            {
+                return HashingAlgorithms.SHA3;
             }
 
             return Sha2Button ? HashingAlgorithms.SHA2 : HashingAlgorithms.NONE;
