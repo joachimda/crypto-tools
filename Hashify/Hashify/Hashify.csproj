@@ -54,6 +54,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Crypto\AlgorithmEnums.cs" />
+    <Compile Include="Crypto\HashFunctions\Md5Toolbox.cs" />
+    <Compile Include="Crypto\HashFunctions\Sha1Toolbox.cs" />
+    <Compile Include="Main\BaseBindings.cs" />
+    <Compile Include="Main\HashCipherRadioButtons.cs" />
+    <Compile Include="RelayCommand.cs" />
     <Page Include="Main\Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -86,6 +92,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
