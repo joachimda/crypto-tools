@@ -118,12 +118,12 @@ namespace Hashify.Main.ViewModels
                 PropertyIsChanged(nameof(HashedFile));
             }
         }
+
         private string _fileName = string.Empty;
         private string _hashedFile;
         private HashingAlgorithms _algorithms;
         private readonly Stopwatch _stopwatch = new Stopwatch();
         private string _timeElapsed;
-
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void PropertyIsChanged(string info)
