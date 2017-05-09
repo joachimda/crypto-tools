@@ -58,6 +58,7 @@
     <Compile Include="Crypto\HashFunctions\Md5Toolbox.cs" />
     <Compile Include="Crypto\HashFunctions\Sha1Toolbox.cs" />
     <Compile Include="Crypto\HashFunctions\Sha256ToolBox.cs" />
+    <Compile Include="Crypto\HashFunctions\Sha384ToolBox.cs" />
     <Compile Include="Main\BaseBindings.cs" />
     <Compile Include="Main\HashCipherRadioButtons.cs" />
     <Compile Include="RelayCommand.cs" />
